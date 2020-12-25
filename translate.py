@@ -1,7 +1,7 @@
 import geopandas as gpd
 from shapely.geometry import Point
 
-df = gpd.read_file('station.geojson', epsg=4612)[['N02_003', 'N02_005', 'geometry']]
+df = gpd.read_file('var/station.geojson', epsg=4612)[['N02_003', 'N02_005', 'geometry']]
 df.geometry = df.geometry.centroid
 df.columns = ['railway', 'station', 'geometry']
 df = df.to_crs(2451)
