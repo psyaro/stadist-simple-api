@@ -41,6 +41,8 @@
         })
         .done(function(data) {
           $('#ans').text(data.dist + 'm')
+        }).fail(function(data){
+          $('#ans').text('駅名が存在しないなどのエラー')
         })
       })
     </script>  
