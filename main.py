@@ -2,6 +2,8 @@ from api import Stations
 import json
 from flask import Flask, jsonify, render_template
 
+app = Flask(__name__)
+
 def stations_simple(request):
     stations = Stations()
     orig, dest = (
@@ -10,4 +12,7 @@ def stations_simple(request):
     )
     if not orig or not dest:
         return render_template('index.html')
-    return jsonify(dict(dist=stations.api(orig, dest)))
+    response = jsonify(dict(dist=stations.api(orig, dest)))
+    response.headers.add('Access-Control-Allow-Origin', 'https://psyaro.github.io')
+    return response
+

@@ -22,7 +22,7 @@
           <button id="submit" class="form-control btn btn-primary">送信</button>      
         </div>
         <h3>回答部</h3>
-        <p id="ans"></p>
+        <p id="ans" style="font-size: large;"></p>
       </div>
     <footer>
       このサイトはGoogle アナリティクスを使用していません。
@@ -40,7 +40,7 @@
           timeout: 5000,
         })
         .done(function(data) {
-          $('#ans').text(data)
+          $('#ans').text(data.dist + 'm')
         })
       })
     </script>  
