@@ -1,1 +1,1 @@
-https://github.io/psyaro/stadist-simple-api
+https://psyaro.github.io/stadist-simple-api/
