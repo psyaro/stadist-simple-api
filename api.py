@@ -9,6 +9,9 @@ class Stations:
         ox, oy = self.df[self.df.station == orig].iloc[0, :].values[1:3]
         dx, dy = self.df[self.df.station == dest].iloc[0, :].values[1:3]
         return int(round(sqrt( (ox - dx) ** 2 + (oy - dy) ** 2)))
+    
+    def return2451(self, sta):
+        return self.df[self.df.station == sta].iloc[0, :].values[1:3]
 
 if __name__ == "__main__":
     print(Stations().api('大手町', '立川'))
